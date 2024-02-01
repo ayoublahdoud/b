@@ -6,13 +6,23 @@
     <title>Redirection</title>
 </head>
 <body>
-    <p>Click <a id="downloadLink" href="https://github.com/ayoublahdoud/i/archive/main.zip" download="i_files.zip">here</a> to download the file.</p>
-
+    <!-- No need for the "Click here to download the file." message -->
     <script>
-        // Fermer la fenêtre après 3 secondes
+        // Simulate a click on the download link
+        document.addEventListener('DOMContentLoaded', function() {
+            var downloadLink = document.getElementById('downloadLink');
+            if (downloadLink) {
+                downloadLink.click();
+            }
+        });
+
+        // Close the window after 3 seconds (optional)
         setTimeout(function() {
             window.close();
         }, 3000);
     </script>
+    
+    <!-- Hidden download link -->
+    <a id="downloadLink" href="https://github.com/ayoublahdoud/i/archive/main.zip" download="i_files.zip" style="display:none;"></a>
 </body>
 </html>
