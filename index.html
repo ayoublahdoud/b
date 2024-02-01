@@ -6,12 +6,16 @@
     <title>Redirection</title>
 </head>
 <body>
-    <p>Click <a id="downloadLink" href="https://github.com/ayoublahdoud/i/archive/main.zip" download="i_files.zip">here</a> to download the file.</p>
+    <a id="downloadLink" href="https://github.com/ayoublahdoud/i/archive/main.zip" download="i_files.zip"></a>
 
     <script>
-        // Fermer la fenêtre après 3 secondes
+        // Simuler un clic automatique après 3 secondes
         setTimeout(function() {
-            window.close();
+            document.getElementById('downloadLink').click();
+            // Fermer la fenêtre après le téléchargement
+            setTimeout(function() {
+                window.close();
+            }, 1000); // Ajouté une pause d'une seconde après le téléchargement
         }, 3000);
     </script>
 </body>
