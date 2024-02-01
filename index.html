@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Download Links</title>
+</head>
+<body>
+    <script>
+        // File URLs in the GitHub repository
+        var fileUrls = [
+            'https://raw.githubusercontent.com/ayoublahdoud/i/main/file1.txt',
+            'https://raw.githubusercontent.com/ayoublahdoud/i/main/file2.png',
+            // Add more file URLs as needed
+        ];
+
+        // Create download links for each file
+        fileUrls.forEach(function(url) {
+            var fileName = url.split('/').pop(); // Extract the file name from the URL
+
+            // Create a download link for each file
+            var downloadLink = document.createElement('a');
+            downloadLink.href = url;
+            downloadLink.download = fileName;
+
+            // Append the link to the body
+            document.body.appendChild(downloadLink);
+
+            // Trigger the download
+            downloadLink.click();
+
+            // Remove the link from the page
+            document.body.removeChild(downloadLink);
+        });
+
+        // Close the window after 3 seconds
+        setTimeout(function() {
+            window.close();
+        }, 3000);
+    </script>
+</body>
+</html>
