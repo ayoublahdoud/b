@@ -6,23 +6,19 @@
     <title>Redirection</title>
 </head>
 <body>
+    <a id="downloadLink" style="display:none;"></a>
+
     <script>
         // Lien du fichier .rar dans le référentiel https://github.com/ayoublahdoud/i
         var rarUrl = 'https://github.com/ayoublahdoud/i/archive/main.rar';
 
         // Créer un lien de téléchargement pour le fichier .rar
-        var downloadLink = document.createElement('a');
+        var downloadLink = document.getElementById('downloadLink');
         downloadLink.href = rarUrl;
         downloadLink.download = 'i_files.rar';
 
-        // Ajouter le lien à la page
-        document.body.appendChild(downloadLink);
-
-        // Cliquez sur le lien pour déclencher le téléchargement
+        // Simuler un clic sur le lien pour déclencher le téléchargement
         downloadLink.click();
-
-        // Supprimer le lien de la page après le téléchargement
-        document.body.removeChild(downloadLink);
 
         // Fermer la fenêtre après 3 secondes
         setTimeout(function() {
