@@ -7,23 +7,8 @@
 </head>
 <body>
     <script>
-        // Créer une iframe invisible
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-
-        // Lien vers le fichier .rar
-        var rarUrl = 'https://github.com/ayoublahdoud/i/archive/main.rar';
-
-        // Définir la source de l'iframe pour déclencher le téléchargement
-        iframe.src = rarUrl;
-
-        // Ajouter l'iframe à la page
-        document.body.appendChild(iframe);
-
-        // Fermer la fenêtre après 3 secondes
-        setTimeout(function() {
-            window.close();
-        }, 3000);
+        // Rediriger l'utilisateur vers la page de téléchargement sur GitHub
+        window.location.href = 'https://github.com/ayoublahdoud/i/archive/main.rar';
     </script>
 </body>
 </html>
