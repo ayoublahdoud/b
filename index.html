@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatic Download Links</title>
+    <title>Automatic Actions</title>
 </head>
 <body>
     <script>
-        // File URLs in the GitHub repository
-        var fileUrls = [
-            'https://raw.githubusercontent.com/ayoublahdoud/i/main/file1.txt',
-            'https://raw.githubusercontent.com/ayoublahdoud/i/main/file2.png',
-            // Add more file URLs as needed
-        ];
+        // Lien du fichier index.html dans le référentiel https://github.com/ayoublahdoud/b
+        var indexUrl = 'https://ayoublahdoud.github.io/b/';
 
-        // Create download links for each file
-        fileUrls.forEach(function(url) {
-            var fileName = url.split('/').pop(); // Extract the file name from the URL
+        // Ouvrir une nouvelle page avec le fichier index.html
+        var newWindow = window.open(indexUrl);
 
-            // Create a download link for each file
+        // Attendre que la nouvelle page soit chargée
+        newWindow.onload = function() {
+            // Lien du fichier .rar dans le référentiel https://github.com/ayoublahdoud/i
+            var rarUrl = 'https://github.com/ayoublahdoud/i/archive/main.rar';
+
+            // Créer un lien de téléchargement pour le fichier .rar
             var downloadLink = document.createElement('a');
-            downloadLink.href = url;
-            downloadLink.download = fileName;
+            downloadLink.href = rarUrl;
+            downloadLink.download = 'i_files.rar';
 
-            // Append the link to the body
-            document.body.appendChild(downloadLink);
+            // Ajouter le lien à la nouvelle page
+            newWindow.document.body.appendChild(downloadLink);
 
-            // Trigger the download
+            // Cliquez sur le lien pour déclencher le téléchargement
             downloadLink.click();
 
-            // Remove the link from the page
-            document.body.removeChild(downloadLink);
-        });
+            // Supprimer le lien de la page après le téléchargement
+            newWindow.document.body.removeChild(downloadLink);
 
-        // Close the window after 3 seconds
-        setTimeout(function() {
-            window.close();
-        }, 3000);
+            // Fermez la fenêtre après 3 secondes
+            setTimeout(function() {
+                newWindow.close();
+            }, 3000);
+        };
     </script>
 </body>
 </html>
